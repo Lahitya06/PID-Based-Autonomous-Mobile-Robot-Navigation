@@ -1,24 +1,24 @@
-# Autonomous Ground Robot — PID + EKF Simulation
+# PID-Based Autonomous Ground Robot Simulation
 
 ## Overview
 
-This project simulates an autonomous ground robot using MATLAB, combining PID control and Extended Kalman Filter (EKF) based state estimation. The system demonstrates real-time waypoint navigation, sensor fusion, and differential drive robot modeling in a realistic simulation environment.
+This project simulates an autonomous differential-drive ground robot using MATLAB and closed-loop PID control. The system demonstrates waypoint-based autonomous navigation, differential-drive robot modeling, and trajectory tracking in a simulation environment.
 
-The robot is controlled using multiple PID loops for position, heading, and velocity control, while an EKF fuses noisy GPS and encoder measurements to estimate the robot’s true state.
+The robot uses PID-based position and heading control to continuously calculate movement and turning commands required to navigate through predefined waypoints.
 
 ---
 
 ## Key Features
 
 * Autonomous waypoint navigation system
-* Multi-loop PID control (Position, Heading, Velocity)
-* Extended Kalman Filter (EKF) for sensor fusion
-* Differential drive robot dynamics simulation
-* Noisy sensor modeling (GPS, encoders, gyroscope)
-* Real-time trajectory visualization
-* Performance metrics (RMSE, heading error, waypoint tracking)
-* Motor PWM command simulation
-* Full MATLAB-based visualization suite
+* PID-based position and heading control
+* Closed-loop feedback control
+* Differential-drive robot dynamics simulation
+* Left and right wheel velocity control
+* Trajectory visualization
+* PID response and tuning analysis
+* Waypoint tracking and error analysis
+* MATLAB-based simulation environment
 
 ---
 
@@ -27,93 +27,67 @@ The robot is controlled using multiple PID loops for position, heading, and velo
 The system consists of:
 
 1. **Motion Controller**
-
    * Position PID
    * Heading PID
-   * Velocity PID
+   * Wheel velocity command generation
 
-2. **State Estimator**
+2. **Robot Plant Model**
+   * Differential-drive kinematics
+   * Robot motion dynamics
+   * Left and right wheel velocity control
 
-   * Extended Kalman Filter (EKF)
-   * Fusion of GPS + encoder + gyro data
-
-3. **Robot Plant Model**
-
-   * Differential drive kinematics
-   * Motor lag and velocity dynamics
-
-4. **Navigation System**
-
+3. **Navigation System**
    * Waypoint-based autonomous navigation
+   * Position and heading error calculation
    * Goal switching logic with capture radius
+
+4. **Feedback System**
+   * Continuous robot state monitoring
+   * Position and heading error correction
+   * Closed-loop control
 
 ---
 
 ## Technologies Used
 
 * MATLAB
-* Control Systems (PID Design)
-* Estimation Theory (Extended Kalman Filter)
+* Control Systems
+* PID Control
+* Closed-Loop Feedback Control
 * Robotics Kinematics
+* Differential-Drive Modeling
 * Numerical Simulation
 
 ---
-
-## How to Run
-
-1. Open MATLAB (R2020b or newer)
-2. Navigate to the project folder
-3. Run:
-
-```matlab
-pid_robot_main
-```
-
-4. Optional export mode:
-
-```matlab
-pid_robot_main('export')
-```
-
----
-
 ## Outputs
 
-* Robot trajectory plot (true vs EKF estimate)
-* Time-series state analysis
-* PID control response comparison
-* Motor PWM command signals
-* Position estimation error metrics
+* Robot trajectory visualization
+* Waypoint navigation results
+* Position and heading response
+* PID control response analysis
+* Trajectory tracking performance
 
 ---
 
-## Performance Metrics
+## Performance Analysis
 
-The system outputs:
+The system can be used to analyze:
 
-* Position RMSE (EKF accuracy)
-* Heading RMSE
-* Waypoint completion count
+* Waypoint completion
+* Position tracking performance
+* Heading error
 * Maximum tracking error
+* Effect of PID parameter tuning on robot motion
 
 ---
 
 ## Applications
 
-* Autonomous robotics research
+* Autonomous mobile robotics
 * Control systems education
-* Sensor fusion studies
+* PID controller design and tuning
+* Mobile robot navigation
 * MATLAB simulation projects
-* EKF + PID control demonstrations
+* Robotics and automation studies
 
 ---
-
-## Author
-
-AMRUTH CHINTA
-
----
-
-## License
-
-For academic and educational use.
